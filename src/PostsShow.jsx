@@ -1,13 +1,13 @@
-import axios from "axios";
-
 export function PostsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.patch("http://localhost:3000/posts/" + props.post.id + ".json", params).then((response) => {
-      console.log(response.data);
-      event.target.reset();
-    });
+    props.onUpdatePost(props.post.id, params);
+    event.target.reset();
+  };
+
+  const handleClick = () => {
+    props.onDestroyPost(props.post);
   };
 
   return (
@@ -23,7 +23,9 @@ export function PostsShow(props) {
         <div>
           Image: <input defaultValue={props.post.image} name="image" type="text" />
         </div>
+        <button type="submit">Update the Post</button>
       </form>
+      <button onClick={handleClick}>Delete Post</button>
     </div>
   );
 }
