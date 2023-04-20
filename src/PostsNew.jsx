@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 
 export function PostsNew(props) {
   const handleSubmit = (event) => {
@@ -8,6 +7,7 @@ export function PostsNew(props) {
     console.log("handleSubmit", params);
     props.onCreatePost(params);
     event.target.reset();
+    window.location.href = "/";
   };
 
   return (
