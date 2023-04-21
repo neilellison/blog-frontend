@@ -96,8 +96,8 @@ export function Header() {
             </div>
           </div>
         </nav>
-        <Link to="/">All Posts</Link> |<Link to="/about">About</Link> |<Link to="/signup">Signup</Link> |
-        <Link to="/login">Login</Link> |<Link to="/posts/new">New Post</Link> |
+        <Link to="/">All Posts</Link> |<Link to="/about">About</Link> |<Link to="/posts/new">New Post</Link> |
+        {authenticationLinks}
       </header>
     </>
   );
